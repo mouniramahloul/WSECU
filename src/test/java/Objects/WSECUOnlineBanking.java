@@ -32,7 +32,7 @@ public class WSECUOnlineBanking {
 		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
 		WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".link-list-item.ng-binding[ng-href='/banking/self-enrollment']")));
 		SignIn2.click();
-		String actual_error=driver.getTitle();
+		String actual_error= driver.findElement(By.xpath("(//div[@class='ng-binding ng-scope'])[1]")).getText();
 		String expected_error="Sorry, incorrect username.";
 		Assert.assertEquals(actual_error,expected_error);
 				

@@ -30,7 +30,7 @@ public class LoginPage {
 		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
 		WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[value='Sign in']")));
 		SignIn.click();
-		String webPageTitle= driver.getTitle();System.out.println("Title is"+webPageTitle);
+		String webPageTitle= driver.getTitle();
 		String expectedTitle="Sign in to Online Banking";
 		Assert.assertEquals(webPageTitle, expectedTitle);
 		
